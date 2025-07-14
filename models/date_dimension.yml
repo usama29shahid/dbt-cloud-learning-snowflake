@@ -1,0 +1,30 @@
+models:
+- name: date_dimension
+  description: This model provides a detailed breakdown of the start times of bike
+    rides, including the exact timestamp, date, and hour of the start, as well as
+    categorizing the day as a business day or weekend and identifying the season of
+    the year. It is useful for analyzing ride patterns based on time and seasonality.
+  columns:
+  - name: started_at
+    description: The exact timestamp when the bike ride started, in UTC.
+    data_tests:
+      - not_null
+  - name: date_started_at
+    description: The date when the bike ride started, extracted from the timestamp.
+    data_tests:
+      - not_null
+  - name: hour_started_at
+    description: The hour of the day when the bike ride started, extracted from the
+      timestamp.
+    data_tests:
+      - not_null
+  - name: day_type
+    description: Indicates whether the start day of the bike ride is a business day
+      or a weekend.
+    data_tests:
+      - not_null
+  - name: station_of_year
+    description: The season of the year when the bike ride started, determined from
+      the timestamp.
+    data_tests:
+      - not_null
