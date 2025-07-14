@@ -1,0 +1,35 @@
+models:
+- name: weather_bike_corelation
+  description: This model analyzes the correlation between bike trips and daily weather
+    conditions. It combines data from bike trip records and daily weather reports
+    to provide insights into how weather impacts bike usage.
+  columns:
+  - name: ride_id
+    description: A unique identifier for each bike ride.
+    data_tests:
+      - unique
+      - not_null
+  - name: trip_date
+    description: The date on which the bike trip occurred.
+    data_tests:
+      - not_null
+  - name: start_station_id
+    description: The identifier for the station where the bike trip started.
+  - name: end_station_id
+    description: The identifier for the station where the bike trip ended.
+  - name: member_casual
+    description: Indicates whether the rider is a member or a casual user.
+  - name: trip_duration_seconds
+    description: The duration of the bike trip in seconds.
+  - name: daily_weather
+    description: The date corresponding to the daily weather report.
+  - name: weather
+    description: A description of the weather conditions on the trip date.
+  - name: avg_temp
+    description: The average temperature on the trip date.
+  - name: avg_pressure
+    description: The average atmospheric pressure on the trip date.
+  - name: avg_humidity
+    description: The average humidity level on the trip date.
+  - name: avg_clouds
+    description: The average cloud coverage on the trip date.

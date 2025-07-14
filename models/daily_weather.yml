@@ -1,0 +1,22 @@
+models:
+- name: daily_weather
+  description: This model aggregates daily weather data to provide average metrics
+    for temperature, pressure, humidity, and cloud coverage. It selects the most frequent
+    weather condition for each day, offering a concise summary of daily weather patterns.
+  columns:
+  - name: daily_weather
+    description: The date for which the weather data is aggregated.
+    data_tests:
+      - not_null
+  - name: weather
+    description: The most frequent weather condition for the day.
+    data_tests:
+      - not_null
+  - name: avg_temp
+    description: The average temperature recorded for the day.
+  - name: avg_pressure
+    description: The average atmospheric pressure recorded for the day.
+  - name: avg_humidity
+    description: The average humidity level recorded for the day.
+  - name: avg_clouds
+    description: The average cloud coverage recorded for the day.
